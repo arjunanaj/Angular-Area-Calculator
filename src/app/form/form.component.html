@@ -1,0 +1,246 @@
+<div class="body ">
+
+  
+  <div class="container-fluid ">
+    <div class="container">
+    <div class="row justify-content-center min-vh-100 align-items-center ">
+      <div class="col-lg-6 col-12 ">
+        <div class="intro py-3">
+          <div *ngIf="formula=='Formula'">
+            <div *ngIf="selectedshape==''" >
+              <h2 class="mx-3">AREA IN AN INSTANT</h2>
+              <h4 class="mx-3"> Calculate Area and Perimeter of any Shape<br> you Draw or Image you Trace
+              </h4>
+            </div>
+          </div>
+          <div *ngIf="formula=='Area'">
+            <div *ngIf="selectedshape=='Triangle'" class="py-5">
+              <h2 class="mx-3">AREA OF TRIANGLE</h2>
+              <h4 class="mx-3">It refers to the amount of space that the triangle covers or takes
+                up.<B class="mx-1">Formula=1/2*b*h</B></h4>
+            </div>
+            <div *ngIf="selectedshape=='Square'"class="py-5">
+              <h2 class="mx-3">AREA OF SQUARE</h2>
+              <h4 class="mx-3">The space covered by the object. It is the region occupied by any shape.<B
+                  class="mx-1">Formula=a*a</B></h4>
+            </div>
+            <div *ngIf="selectedshape=='Rectangle'"class="py-5">
+              <h2 class="mx-3">AREA OF RECTANGLE</h2>
+              <h4 class="mx-3">It is the region occupied by a rectangle within its four sides or
+                boundaries.<B class="mx-1">Formula=l*b</B></h4>
+            </div>
+          </div>
+          <div *ngIf="formula=='Perimeter'">
+            <div *ngIf="selectedshape=='Triangle'"class="py-5">
+              <h2 class="mx-3">PERIMETER OF TRIANGLE</h2>
+              <h4 class="mx-3">The Perimeter of a triangle refers to the total length of its boundaries.
+                <B class="mx-1">Formula=s1+s2+s3</B>
+              </h4>
+            </div>
+            <div *ngIf="selectedshape=='Square'"class="py-5">
+              <h2 class="mx-3">PERIMETER OF SQUARE</h2>
+              <h4 class="mx-3">Perimeter of a square is the distance covered by its four sides.
+                <B class="mx-1">Formula=4*(a+a+a+a)</B>
+              </h4>
+            </div>
+            <div *ngIf="selectedshape=='Rectangle'" class="py-5">
+              <h2 class="mx-3">PERIMETER OF RECTANGLE</h2>
+              <h4 class="mx-3">Perimeter of a rectangle is the total distance covered by its boundaries or the sides. <B
+                  class="mx-1">Formula=2(a+b)</B></h4>
+            </div>
+          </div>
+          <div *ngIf="formula=='Volume'">
+            <div *ngIf="selectedshape=='Cube'" class="py-5">
+              <h2 class="mx-3">VOLUME OF CUBE</h2>
+              <h4 class="mx-3">A cube is a solid three-dimensional figure, which has 6 square faces or sides.
+                <B class="mx-1">Formula=a*a*a</B>
+              </h4>
+            </div>
+            <div *ngIf="selectedshape=='Cuboid'"class="py-5">
+              <h2 class="mx-3">VOLUME OF CUBOID</h2>
+              <h4 class="mx-3">The volume of a cuboid is given by the product of its dimensions. <B
+                  class="mx-1">Formula=l*b*h</B></h4>
+            </div>
+            <div *ngIf="selectedshape=='Sphere'"class="py-5">
+              <h2 class="mx-3">VOLUME OF SPHERE</h2>
+              <h4 class="mx-3">The volume here depends on the diameter of the radius of the sphere. <B
+                  class="mx-1">Formula=4/3 πr3</B></h4>
+            </div>
+          </div>
+          <div *ngIf="formula=='SurfaceArea'">
+            <div *ngIf="selectedshape=='Cube'"class="py-5">
+              <h2 class="mx-3">SURFACE OF CUBE</h2>
+              <h4 class="mx-3"> The sum of areas of all the faces of cube, that covers it.
+                <B class="mx-1">Formula=6a2 </B>
+              </h4>
+            </div>
+            <div *ngIf="selectedshape=='Cuboid'"class="py-5">
+              <h2 class="mx-3">SURFACE OF CUBOID</h2>
+              <h4 class="mx-3">A cuboid is a 3d figure or solid which has six rectangular sides called
+                faces. <B class="mx-1"> Formula=2(lw + wh + lh)</B></h4>
+            </div>
+            <div *ngIf="selectedshape=='Sphere'"class="py-5">
+              <h2 class="mx-3">SURFACE OF SPHERE</h2>
+              <h4 class="mx-3">1It is defined as the region covered by its outer surface in
+                3d space. <B class="mx-1">Formula=4 π r2 </B></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6 col-12 ">
+        <div class="card">
+          <div class="card-header" id="cardheader">
+           <span>Trace Your Shapes</span>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-3 col-3">
+                <div class="dropdown w-25  open  mx-4 my-5" >
+                  <button class="btn dropdown-toggle " type="button" id="triggerId" id="dropdowns"
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{TwoDshapes}}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="triggerId">
+                    <button class="dropdown-item"
+                      (click)="  selectedimension('2DShapes'); Onselectdimension('Triangle')">Triangle</button>
+                    <button class="dropdown-item"
+                      (click)="  selectedimension('2DShapes'); Onselectdimension('Square')">Square</button>
+                    <button class="dropdown-item"
+                      (click)="  selectedimension('2DShapes'); Onselectdimension('Rectangle')">Rectangle</button>
+                  </div>
+                </div>
+                <div class="dropdown open  mx-4  my-5">
+                  <button class="btn dropdown-toggle" type="button" id="triggerId"id="dropdowns" data-bs-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{ThreeDshapes}}
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="triggerId">
+                    <button class="dropdown-item"
+                      (click)=" selectedimension('3DShapes'); Onselectdimension('Cube')">Cube</button>
+                    <button class="dropdown-item"
+                      (click)=" selectedimension('3DShapes'); Onselectdimension('Cuboid')">Cuboid</button>
+                    <button class="dropdown-item"
+                      (click)=" selectedimension('3DShapes'); Onselectdimension('Sphere')">Sphere</button>
+                  </div>
+                </div>
+                <div *ngIf="shapes=='2DShapes'">
+                  <div class="dropdown open mx-4 my-4">
+                    <button class="btn  dropdown-toggle" type="button" id="triggerId"  id="dropdowns" data-bs-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      {{formula}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                      <button class="dropdown-item" (click)="OnselectFormula('Area')">Area</button>
+                      <button class="dropdown-item" (click)="OnselectFormula('Perimeter')">Perimeter</button>
+
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="shapes=='3DShapes'">
+                  <div class="dropdown open mx-4 my-4">
+                    <button class="btn  dropdown-toggle" type="button" id="triggerId"  id="dropdowns" data-bs-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      {{formula}}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="triggerId">
+                      <button class="dropdown-item" (click)="OnselectFormula('Volume')">Volume</button>
+                      <button class="dropdown-item" (click)="OnselectFormula('SurfaceArea')">SurfaceArea</button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              <div class="col-md-3 col-3">
+                <div class="card-body mx-4 my-4">
+                  <div *ngIf="formula=='Area'">
+                    <div *ngIf="selectedshape=='Triangle'">
+                      <input type="text" class=" mx-5 my-4 text-center" [(ngModel)]="breath" placeholder="breath"><br>
+                      <input type="text" class="mx-5  my-4 text-center" [(ngModel)]="height" placeholder="height">
+                    </div>
+                    <div *ngIf="selectedshape=='Square'">
+                      <div class=" my-5">
+                        <input type="text" class=" mx-5 my-5 text-center" [(ngModel)]="length" placeholder="side"><br>
+                      </div>
+                    </div>
+                    <div *ngIf="selectedshape=='Rectangle'">
+                      <input type="text" class="mx-5 my-4 text-center" [(ngModel)]="length" placeholder="length"><br>
+                      <input type="text" class="mx-5 my-4 text-center" [(ngModel)]="breath" placeholder="breath"><br>
+                    </div>
+                  </div>
+                  <div *ngIf="formula=='Perimeter'">
+                    <div *ngIf="selectedshape=='Triangle'">
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="breath" placeholder="side1"><br>
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="length" placeholder="side2"><br>
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="height" placeholder="side3"><br>
+                    </div>
+                    <div *ngIf="selectedshape=='Rectangle'">
+                      <input type="text" class="mx-5 my-4 text-center" [(ngModel)]="length" placeholder="length"><br>
+                      <input type="text" class="mx-5 my-4 text-center" [(ngModel)]="breath" placeholder="breath"><br>
+                    </div>
+                    <div *ngIf="selectedshape=='Square'">
+                      <div class=" my-5">
+                        <input type="text" class="mx-5 my-5 text-center" [(ngModel)]="length" placeholder="side"><br>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="formula=='Volume'">
+                    <div *ngIf="selectedshape=='Cube'">
+                      <div class=" my-5">
+                        <input type="text" class="mx-5 my-5 text-center" [(ngModel)]="length" placeholder="side"><br>
+                      </div>
+                    </div>
+                    <div *ngIf="selectedshape=='Cuboid'">
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="length" placeholder="length"><br>
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="breath" placeholder="breath"><br>
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="height" placeholder="height"><br>
+                    </div>
+                    <div *ngIf="selectedshape=='Sphere'">
+                      <div class=" my-5">
+                        <input type="text" class="mx-5 my-5 text-center" [(ngModel)]="length" placeholder="radius"><br>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div *ngIf="formula=='SurfaceArea'">
+                    <div *ngIf="selectedshape=='Cube'">
+                      <div class=" my-5">
+                        <input type="text" class="mx-5 my-5 text-center" [(ngModel)]="length" placeholder="side"><br>
+                      </div>
+                    </div>
+                    <div *ngIf="selectedshape=='Cuboid'">
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="length" placeholder="length"><br>
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="breath" placeholder="breath"><br>
+                      <input type="text" class="mx-5 my-3 text-center" [(ngModel)]="height" placeholder="height"><br>
+                    </div>
+                    <div *ngIf="selectedshape=='Sphere'">
+                      <div class=" my-5">
+                        <input type="text" class="mx-5 my-5 text-center" [(ngModel)]="length" placeholder="radius"><br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="calcbtn">
+                <button class="btn btn-success"
+                  (click)="calculate(length,breath,height,selectedshape,formula)">Calculate</button>
+              </div>
+            </div>
+
+          </div>
+          <div class="card-footer" id="cardfooter">
+            <p> Result  =<span class="mx-2">{{result}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
